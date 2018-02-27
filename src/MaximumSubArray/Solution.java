@@ -1,17 +1,19 @@
 package MaximumSubArray;
 class Solution {
     public static int maxSubArray(int[] nums) {
-        int max=0;
-        int maxsoFar=0;
 
+        //if (nums.length==1)return nums[0];
+        int max=nums[0];
+        int maxsoFar=0;
         for(int i =0; i<nums.length;i++){
             maxsoFar= maxsoFar+nums[i];
-            if(maxsoFar<0) {
-                maxsoFar = 0;
-            }
             if(max<maxsoFar) {
                 max = maxsoFar;
             }
+            if(maxsoFar<0) {
+                maxsoFar = 0;
+            }
+
         }
         return max;
     }
